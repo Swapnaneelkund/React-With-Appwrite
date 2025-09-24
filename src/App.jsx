@@ -28,7 +28,7 @@ function App() {
       <div className='w-full block jusify-center items-center'>
            <Header/>
            <main>
-           TODO{/* <Outlet/> */}
+            <Outlet/> 
            </main>
            <Footer/>
       </div>

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import DatabaseStorageService from "../appwrite/config";
+import DatabaseStorageService from "../../appwrite/conf.js";
 import Container from '../container/Container';
 import PostCard from '../PostCard';
 function Home() {

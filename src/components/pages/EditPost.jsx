@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
-import DatabaseStorageService from "../../appwrite/conf.jsx"
+import DatabaseStorageService from "../../appwrite/conf.js"
 import PostForm from '../../post-form/PostForm';
 const EditPost = () => {
   const [post,setPosts]=useState(null);

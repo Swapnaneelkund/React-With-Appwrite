@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import appwriteService from '../../appwrite/conf.jsx';
+import appwriteService from '../../appwrite/conf.js';
 import { useSelector } from 'react-redux';
 import Container from '../container/Container.jsx';
 import {Button} from '../index.js'
