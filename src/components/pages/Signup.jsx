@@ -1,6 +1,6 @@
 import React from 'react'
 import Signup from '../Signup.jsx'
-const Signup = () => {
+const Signup1 = () => {
   return (
     <div className='py-8'>
         <Signup/>
@@ -8,4 +8,4 @@ const Signup = () => {
   )
 }
 
-export default Signup
+export default Signup1;

@@ -8,8 +8,7 @@ client = new Client();
     
     constructor(){
         this.client
-        .setEndpoint(config.appWriteUrlL)
-        .setProject(config.appwriteProjectId);
+        .setProject(config.appWriteProjectId);
         this.databases = new Databases(this.client);
         this.bucket = new Storage(this.client);
     }
@@ -17,8 +16,8 @@ client = new Client();
     async createPost({title, slug, content, featuredImage, status, userId}){
         try {
             return await this.databases.createDocument(
-                conf.appwriteDatabaseId,
-                conf.appwriteCollectionId,
+                config.appWriteDatabaseId,
+                config.appWriteCollectionId,
                 slug,
                 {
                     title,
@@ -36,8 +35,8 @@ client = new Client();
     async updatePost(slug, {title, content, featuredImage, status}){
         try {
             return await this.databases.updateDocument(
-                conf.appwriteDatabaseId,
-                conf.appwriteCollectionId,
+                config.appWriteDatabaseId,
+                config.appWriteCollectionId,
                 slug,
                 {
                     title,
@@ -55,8 +54,8 @@ client = new Client();
     async deletePost(slug){
         try {
             await this.databases.deleteDocument(
-                conf.appwriteDatabaseId,
-                conf.appwriteCollectionId,
+                config.appWriteDatabaseId,
+                config.appWriteCollectionId,
                 slug
             
             )
@@ -70,8 +69,8 @@ client = new Client();
     async getPost(slug){
         try {
             return await this.databases.getDocument(
-                conf.appwriteDatabaseId,
-                conf.appwriteCollectionId,
+                config.appWriteDatabaseId,
+                config.appWriteCollectionId,
                 slug
             
             )
@@ -81,12 +80,12 @@ client = new Client();
         }
     }
 
-    async getPosts(queries = [Query.equal("status", "active")]){
+    async getPosts(){
         try {
             return await this.databases.listDocuments(
-                conf.appwriteDatabaseId,
-                conf.appwriteCollectionId,
-                queries,
+                config.appWriteDatabaseId,
+                config.appWriteCollectionId,
+                
                 
 
             )
@@ -101,7 +100,7 @@ client = new Client();
     async uploadFile(file){
         try {
             return await this.bucket.createFile(
-                conf.appwriteBucketId,
+                config.appWriteBucketId,
                 ID.unique(),
                 file
             )
@@ -114,7 +113,7 @@ client = new Client();
     async deleteFile(fileId){
         try {
             await this.bucket.deleteFile(
-                conf.appwriteBucketId,
+                config.appWriteBucketId,
                 fileId
             )
             return true
@@ -126,7 +125,7 @@ client = new Client();
 
     getFilePreview(fileId){
         return this.bucket.getFilePreview(
-            conf.appwriteBucketId,
+            config.appWriteBucketId,
             fileId
         )
     }

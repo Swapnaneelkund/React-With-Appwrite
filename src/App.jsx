@@ -22,7 +22,7 @@ function App() {
     }).finally(()=>{
       setloading(false);
     })
-  })
+  },[])
   return !loading ? (
     <div className='min-h-screen flex flex-wrap content-between bg-gray-400 w-full p-8 '>
       <div className='w-full block jusify-center items-center'>
