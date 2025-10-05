@@ -1,9 +1,9 @@
 import React, {useState,useEffect} from "react"
 import Container from "../container/Container"
-import {PostCard} from '../index.js'
+import {PostForm} from '../index.js'
 import DatabaseStorageService from '../../appwrite/conf.js'
 function AllPosts(){
-    const [posts,setPosts]=useState(null);
+    const [posts,setPosts]=useState([]);
     DatabaseStorageService.getPosts([]).then((posts)=>{
         if(posts){
             setPosts(posts.documents)
@@ -17,7 +17,7 @@ function AllPosts(){
                    {
                     posts.map((post)=>{
                     <div key={post.$id} className='p-2 w-1/4'>
-                        <PostCard {...post} />
+                        <PostForm {...post} />
                     </div>                      
                     })
                    }

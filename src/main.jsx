@@ -7,7 +7,7 @@ import Login1 from './components/pages/Login.jsx';
 import AddPost from './components/pages/AddPost.jsx';
 import Signup1 from './components/pages/Signup.jsx';
 import Home from './components/pages/Home.jsx'
-import AllPost from './components/pages/AddPost.jsx'
+import AllPost from './components/pages/AllPosts.jsx'
 import EditPost from './components/pages/EditPost.jsx'
 import Post from './components/pages/Post.jsx'  
 import './index.css'
